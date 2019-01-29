@@ -1,6 +1,6 @@
-From ubuntu:16.04
+From ubuntu:18.04
 
-MAINTAINER Jacob chenjr0719@gmail.com
+MAINTAINER Jacob rajdipm65@gmail.com
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -18,10 +18,10 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY nginx-site.conf /etc/nginx/sites-available/default
 COPY supervisor.conf /etc/supervisor/conf.d/
 
-COPY uwsgi.ini /home/django/
-COPY uwsgi_params /home/django/
+COPY uwsgi.ini /home/ubuntu/django/all_safe_djangoapp/
+COPY uwsgi_params /home/ubuntu/django/all_safe_djangoapp/
 
-COPY start.sh /home/django/
+COPY start.sh /home/ubuntu/django/all_safe_djangoapp/
 
 EXPOSE 80
-CMD ["/bin/bash", "/home/django/start.sh"]
+CMD ["/bin/bash", "/home/ubuntu/django/all_safe_djangoapp/start.sh"]
